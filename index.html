@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Baked Goods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="C:\Users\tyler\OneDrive\Pictures\Saved Pictures\heavenly-baked-goods-high-resolution-logo-transparent.png" alt="Heavenly Baked Goods Logo" class="logo">
+        </div>
+        <h1>Heavenly Baked Goods</h1>
+        <p>Your go-to place for freshly baked sourdough and cookies.</p>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav id="side-nav">
+            <a href="#gallery">Gallery</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Order</a>
+            <a href="#reviews">Reviews</a>
+        </nav>
+    </header>
+    
+<main>
+    
+    <!-- About Section -->
+<section id="about">
+    <div class="about-container">
+        <h2>Welcome to Heavenly Baked Goods!</h2>
+        <p>At Heavenly Baked Goods, we don't just bake—we create joy in every bite! Our sourdough bread, cookies, and treats are made with the finest ingredients, love, and a sprinkle of magic. Whether you're indulging in a cheesy, spicy cheddar jalapeño sourdough or savoring a classic chocolate chip cookie, you'll feel the warmth of home in every bite!</p>
+        <p>Our mission? To bring people together with the simple, yet profound joy of delicious baked goods. At Heavenly Baked Goods, it's not just about the food—it's about the experience. Every loaf, every cookie is baked to make you smile. So go ahead, take a bite, and discover your new favorite treat!</p>
+        <div class="about-image">
+            <img src="https://www.theperfectloaf.com/wp-content/uploads/2016/03/theperfectloaf-beginners-sourdough-bread-v-1-1.jpg" alt="Freshly baked bread" />
+        </div>
+    </div>
+</section>
+
+    
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Our Creations</h2>
+        <div class="gallery-container">
+            <img src="https://countryroadssourdough.com/wp-content/uploads/2024/04/jalapeno-cheddar1-720x720.webp" alt="Cheddar Jalapeno Sourdough">
+            <img src="https://handletheheat.com/wp-content/uploads/2023/06/peanut-butter-chocolate-chip-cookies-SQUARE-500x375.jpg" alt="Chocolate Chip Cookie">
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <h3>Sourdough Breads</h3>
+        <ul>
+            <li>Cheddar Jalapeño Sourdough</li>
+            <li>Grape Jam Sourdough</li>
+            <li>Rosemary Olive Sourdough</li>
+            <li>Garlic Parmesan Sourdough</li>
+        </ul>
+        <h3>Cookies</h3>
+        <ul>
+            <li>Chocolate Chip Cookies</li>
+            <li>Oatmeal Raisin Cookies</li>
+            <li>Peanut Butter Cookies</li>
+            <li>Snickerdoodle Cookies</li>
+        </ul>
+    </section>
+
+    <!-- Contact/Order Form Section -->
+    <section id="contact">
+        <h2>Place an Order</h2>
+        <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="order">Order Details:</label>
+            <textarea id="order" name="order" required></textarea>
+            
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+    
+
+    <!-- Social Media Section -->
+    <section id="social-media">
+        <h2>Follow Us on Instagram</h2>
+        <!-- Embedded social media feed or link to her Instagram page -->
+    </section>
+</main>
+    <footer>
+        <p>&copy; 2024 Heavenly Baked Goods</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
