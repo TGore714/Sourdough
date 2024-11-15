@@ -113,12 +113,6 @@ section {
     padding: 0;
 }
 
-#menu li {
-    font-size: 1.1em;
-    padding: 8px 0;
-    color: #4a4a4a;
-}
-
 /* Contact/Order Form */
 #contact form {
     display: flex;
