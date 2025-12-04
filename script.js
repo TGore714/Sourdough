@@ -76,6 +76,8 @@ window.addEventListener('scroll', () => {
   heroBg.style.transform = `translateY(${scrolled * 0.15}px) scale(1.03)`;
 });
 
+/* scroll animations
+
 // Reveal on scroll (IntersectionObserver)
 const reveals = document.querySelectorAll('.reveal');
 const revealOptions = {
@@ -92,6 +94,8 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, revealOptions);
 reveals.forEach(r => revealObserver.observe(r));
+*/
+
 
 // Smooth anchor scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -113,6 +117,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   
 // small niceties
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
 
 
 
