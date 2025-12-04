@@ -109,39 +109,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-const orderForm = document.getElementById('order-form');
-if (orderForm) {
-  orderForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const status = document.getElementById('form-status');
-    const formData = new FormData(orderForm);
-
-    status.style.color = 'var(--deep)';
-    status.textContent = 'Sending order…';
-
-    fetch(orderForm.action, {
-      method: orderForm.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-      if (response.ok) {
-        status.style.color = 'green';
-        status.textContent = 'Thanks! Your order was sent. You will receive a confirmation email shortly.';
-        orderForm.reset();
-      } else {
-        throw new Error('Network response was not ok.');
-      }
-    })
-    .catch(() => {
-      status.style.color = 'crimson';
-      status.textContent = 'Oops! Something went wrong. Please try again.';
-    });
-  });
-}
 
   
 // small niceties
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
 
 
