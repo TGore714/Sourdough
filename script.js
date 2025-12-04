@@ -109,24 +109,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Simple form handler (client-side only placeholder)
 const orderForm = document.getElementById('order-form');
 if (orderForm) {
-  orderForm.addEventListener('submit', function (e) {
+  orderForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const status = document.getElementById('form-status');
-    // visually validate required fields
-    const name = orderForm.querySelector('#name');
-    const email = orderForm.querySelector('#email');
-    const details = orderForm.querySelector('#order-details');
+    const formData = new FormData(orderForm);
 
-    if (!name.value.trim() || !email.value.trim() || !details.value.trim()) {
-      status.textContent = 'Please fill in required fields.';
+    status.style.color = 'var(--deep)';
+    status.textContent = 'Sending order…';
+
+    fetch(orderForm.action, {
+      method: orderForm.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        status.style.color = 'green';
+        status.textContent = 'Thanks! Your order was sent. You will receive a confirmation email shortly.';
+        orderForm.reset();
+      } else {
+        throw new Error('Network response was not ok.');
+      }
+    })
+    .catch(() => {
       status.style.color = 'crimson';
-      return;
-    }
+      status.textContent = 'Oops! Something went wrong. Please try again.';
+    });
+  });
+}
 
   
 // small niceties
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
 
