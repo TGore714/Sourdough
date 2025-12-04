@@ -126,16 +126,7 @@ if (orderForm) {
       return;
     }
 
-    // simulate submit (replace with real AJAX or form endpoint)
-    status.style.color = 'var(--deep)';
-    status.textContent = 'Sending order…';
-
-    setTimeout(() => {
-      status.textContent = 'Thanks! Your order request was received. We will email you to confirm pickup details.';
-      orderForm.reset();
-    }, 900);
-  });
-}
-
+  
 // small niceties
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
