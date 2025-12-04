@@ -118,7 +118,6 @@ a:hover{text-decoration:underline}
   inset: 0;
   background-size: cover;
   background-position: center;
-  transform: scale(1.03);
   filter: contrast(1.02) saturate(1.05) brightness(0.9);
   will-change: transform;
   z-index: 0;                    /* behind overlay and content */
@@ -247,6 +246,7 @@ a:hover{text-decoration:underline}
   .hero-title{font-size:1.6rem}
   .hero-sub{font-size:.95rem}
 }
+
 
 
 
