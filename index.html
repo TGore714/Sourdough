@@ -150,36 +150,25 @@
       <div class="panel-inner">
         <h3 class="section-title">Place an Order</h3>
 
-        <form id="order-form" class="order-form" action="#" method="POST" novalidate>
-          <div class="input-grid">
-            <label for="name">Name<span class="required"> *</span>
-              <input id="name" name="name" type="text" required>
-            </label>
+    <section id="contact" class="contact">
+  <h2>Place an Order</h2>
+  <form name="order" method="POST" data-netlify="true">
+    <!-- Netlify requires this hidden input -->
+    <input type="hidden" name="form-name" value="order">
 
-            <label for="email">Email<span class="required"> *</span>
-              <input id="email" name="email" type="email" required>
-            </label>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-            <label for="phone">Phone
-              <input id="phone" name="phone" type="tel" placeholder="(optional)">
-            </label>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-            <label for="pickup">Pickup Date
-              <input id="pickup" name="pickup" type="date">
-            </label>
+    <label for="order">Order Details:</label>
+    <textarea id="order" name="order" required></textarea>
 
-            <label for="order-details" class="full">Order Details<span class="required"> *</span>
-              <textarea id="order-details" name="order" rows="5" required placeholder="What would you like? Quantities, flavors, dietary notes..."></textarea>
-            </label>
-          </div>
+    <button type="submit">Submit Order</button>
+  </form>
+</section>
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Submit Order</button>
-            <button type="reset" class="btn btn-outline">Reset</button>
-          </div>
-
-          <p id="form-status" class="form-status" aria-live="polite"></p>
-        </form>
       </div>
     </section>
 
@@ -214,3 +203,4 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
