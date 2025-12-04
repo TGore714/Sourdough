@@ -147,13 +147,16 @@
 
    <!-- Order / Contact Section -->
 <section id="order" class="panel panel--alt reveal contact">
-
-  <div class= "panel-inner">
+  <div class="panel-inner">
     <h2 class="section-title">Place an Order</h2>
 
-    <form id="order-form" class="order-form" action="https://formsubmit.co/megancogdal27@gmail.com" method="POST" novalidate>
-      <!-- Required hidden input for Netlify -->
-      <input type="hidden" name="form-name" value="order">
+    <form id="order-form" class="order-form" action="https://formsubmit.co/megancogdal27@gmail.com" method="POST">
+      
+      <!-- Disable captcha (optional) -->
+      <input type="hidden" name="_captcha" value="false">
+      
+      <!-- Redirect to thank-you page after submit -->
+      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
 
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
@@ -161,20 +164,20 @@
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
 
-      <label for="phone">Phone
-      <input id="phone" name="phone" type="tel" placeholder="(optional)">
-      </label>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" placeholder="(optional)">
 
       <label for="order-details">Order Details:</label>
       <textarea id="order-details" name="order" required placeholder="What would you like? Quantities, flavors, dietary notes..."></textarea>
 
       <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Submit Order</button>
-            <button type="reset" class="btn btn-outline">Reset</button>
+        <button type="submit" class="btn btn-primary">Submit Order</button>
+        <button type="reset" class="btn btn-outline">Reset</button>
       </div>
     </form>
   </div>
 </section>
+
 
 
     <!-- Reviews -->
@@ -208,6 +211,7 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
 
 
 
