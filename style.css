@@ -147,82 +147,158 @@ a:hover{text-decoration:underline}
 .card--photo img{width:100%; height:100%; object-fit:cover; display:block; border-radius:10px; transition:transform .35s ease; box-shadow:0 6px 18px rgba(0,0,0,0.06)}
 .card--photo:hover img{transform:scale(1.03);}
 
-/* --- MENU SECTION --- */
-
-.menu-section {
-  padding: 60px 20px;
-  background: #fafafa;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.menu-card {
-  background: white;
-  padding: 24px;
-  border-radius: 18px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-.menu-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-}
-
-.menu-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--deep);
-  text-align: center;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  font-size: 1rem;
-  padding-bottom: 8px;
-  border-bottom: 1px dashed rgba(0,0,0,0.12);
-}
-
-.menu-item:last-child {
-  border-bottom: none;
-}
-
-.menu-item span:first-child {
-  font-weight: 500;
-}
-
-.menu-price {
-  font-weight: 600;
-  color: var(--accent, #ba7a3a); /* fallback if you don’t have --accent */
-}
-
-/* Optional subtle accent header bars */
-.menu-card::before {
-  content: "";
-  display: block;
-  height: 6px;
-  width: 60%;
-  margin: 0 auto 18px auto;
-  border-radius: 3px;
-  background: linear-gradient(90deg, var(--accent, #ba7a3a), var(--deep, #4a2f19));
-}
-
 
 /* Menu grid */
-.menu-grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:18px}
+/*   .menu-grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:18px}
 .menu-card{background:rgba(255,255,255,0.8); padding:18px; border-radius:12px; border:1px solid var(--tan-line)}
 .menu-card h4{margin:0 0 10px; font-family:"Playfair Display",serif}
 .menu-card ul{list-style:none; padding:0; margin:0}
-.menu-card li{padding:6px 0; color:var(--brown)}
+.menu-card li{padding:6px 0; color:var(--brown)}   */
+
+/* ===== Snazzy Menu (applies to #menu and .menu-section variants) ===== */
+
+/* Outer wrapper compatibility:
+   - If you used <section id="menu"> (current page), these rules still apply.
+   - If you used .menu-section in the canvas snippet, this also applies.
+*/
+#menu, .menu-section {
+  padding: 36px 20px 56px;
+  background: transparent;
+}
+
+/* Title compatibility: support both .section-title and .menu-title */
+#menu .section-title,
+.menu-section .menu-title,
+.menu-section .section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: var(--deep);
+  text-align: center;
+  margin-bottom: 22px;
+  letter-spacing: .6px;
+}
+
+/* Grid: keep responsive and override previous grid rules if needed */
+#menu .menu-grid,
+.menu-section .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 6px;
+}
+
+/* Cards */
+#menu .menu-card,
+.menu-section .menu-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), #fff);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--tan-line);
+  box-shadow: 0 8px 26px rgba(35,30,24,0.05);
+  transition: transform .22s ease, box-shadow .22s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+}
+
+#menu .menu-card:hover,
+.menu-section .menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(35,30,24,0.09);
+}
+
+/* Card header (h4 in your markup) */
+#menu .menu-card h4,
+.menu-section .menu-card h3,
+.menu-section .menu-card h4 {
+  margin: 0 0 10px;
+  color: var(--brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  letter-spacing: .2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Menu item rows — align text left and price right */
+#menu .menu-card ul,
+.menu-section .menu-card ul {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+#menu .menu-card li,
+.menu-section .menu-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.06);
+  color: var(--deep);
+  font-size: 0.99rem;
+}
+
+#menu .menu-card li:last-child,
+.menu-section .menu-card li:last-child {
+  border-bottom: none;
+}
+
+/* Item name and optional muted description */
+#menu .menu-card li span,
+.menu-section .menu-card li span {
+  display: inline-block;
+  max-width: 68%;
+  text-align: left;
+  font-weight: 500;
+  color: var(--deep);
+}
+
+#menu .menu-card li.muted,
+.menu-section .menu-card li.muted {
+  color: #8a7c72;
+  font-size: 0.92rem;
+}
+
+/* Price styling */
+#menu .menu-card li strong,
+.menu-section .menu-card li strong,
+.menu-section .menu-card .menu-price {
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+/* Small decorative accent bar on top of each card */
+#menu .menu-card::before,
+.menu-section .menu-card::before {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 56%;
+  margin: 0 0 12px 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--deep));
+  opacity: 0.95;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #menu .menu-card, .menu-section .menu-card {
+    padding: 18px;
+  }
+  #menu .menu-card li span, .menu-section .menu-card li span {
+    max-width: 62%;
+  }
+  #menu .menu-card li, .menu-section .menu-card li {
+    font-size: 0.96rem;
+    padding: 6px 0;
+  }
+}
+
 
 /* Order form */
 .order-form .input-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px}
@@ -275,6 +351,7 @@ a:hover{text-decoration:underline}
   .hero-title{font-size:1.6rem}
   .hero-sub{font-size:.95rem}
 }
+
 
 
 
